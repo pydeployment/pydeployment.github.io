@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Zev Lee">
+        <link rel="canonical" href="https://pydeployment.github.io/pydeployment/1.0/user-guide/build-options/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Build Options - PyDeployment</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+        <link href="../../css/version-select.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">PyDeployment</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">User Guide</a>
+</li>
+                                    
+<li>
+    <a href="../getting-started/" class="dropdown-item">Getting Started</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Build Options</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Setting Build Options</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../setting-options/" class="dropdown-item">Setting Build Options</a>
+</li>
+            
+<li>
+    <a href="../setting-options/env-file/" class="dropdown-item">Using an Environment File</a>
+</li>
+            
+<li>
+    <a href="../setting-options/command-line/" class="dropdown-item">Using the Command Line</a>
+</li>
+            
+<li>
+    <a href="../setting-options/using-both/" class="dropdown-item">Using Both</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Advanced Usage</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../advanced/" class="dropdown-item">Advanced Usage</a>
+</li>
+            
+<li>
+    <a href="../advanced/archive-file/" class="dropdown-item">Package as an Archive File</a>
+</li>
+            
+<li>
+    <a href="../advanced/custom-venv/" class="dropdown-item">Using a Custom Virtual Environment</a>
+</li>
+            
+<li>
+    <a href="../advanced/custom-nsis/" class="dropdown-item">Using a Custom NSIS File</a>
+</li>
+            
+<li>
+    <a href="../advanced/custom-makensis/" class="dropdown-item">Using a Custom Makensis Binary</a>
+</li>
+            
+<li>
+    <a href="../advanced/macos-notarization/" class="dropdown-item">macOS Notarization</a>
+</li>
+            
+<li>
+    <a href="../advanced/custom-appimagetool/" class="dropdown-item">Using a Custom Appimagetool Binary</a>
+</li>
+            
+<li>
+    <a href="../advanced/passing-args-to-pyi/" class="dropdown-item">Passing Arguments to PyInstaller</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../about/release-notes/" class="dropdown-item">Release Notes</a>
+</li>
+                                    
+<li>
+    <a href="../../about/contributing/" class="dropdown-item">Contributing</a>
+</li>
+                                    
+<li>
+    <a href="../../about/license/" class="dropdown-item">License</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../getting-started/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../setting-options/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/pydeployment/pydeployment/edit/master/docs/user-guide/build-options.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#build-options" class="nav-link">Build Options</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#universal-build-options" class="nav-link">Universal Build Options</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#windows-build-options" class="nav-link">Windows Build Options</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#macos-build-options" class="nav-link">macOS Build Options</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#linux-build-options" class="nav-link">Linux Build Options</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="build-options">Build Options</h1>
+<p>List of all possible options to set.</p>
+<hr />
+<p>PyDeployment recognizes the following build options. See
+<a href="../setting-options/">Setting Build Options</a> for details on how to set
+these options.</p>
+<h2 id="universal-build-options">Universal Build Options</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--log</code></td>
+<td style="text-align: left;"><code>LOG</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Set the log level. Can choose among <code>'DEBUG'</code>, <code>'INFO'</code>, <code>'WARNING'</code>, <code>'ERROR'</code>. Setting the log level to <code>'WARNING'</code> avoids asking the user for confirmation of the build. Setting the log level to <code>'ERROR'</code> also avoids asking the user for confirmation to delete preexisting build artifacts.</td>
+<td style="text-align: left;"><code>'INFO'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-y</code>, <code>--no-confirm</code></td>
+<td style="text-align: left;"><code>NO_CONFIRM</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;">Do not ask for confirmation. Automatically proceeds with build and deletes preexisting build artifacts.</td>
+<td style="text-align: left;"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--no-clean</code></td>
+<td style="text-align: left;"><code>NO_CLEAN</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;">Do not delete build artifacts after completing the build process.</td>
+<td style="text-align: left;"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--archive</code></td>
+<td style="text-align: left;"><code>ARCHIVE</code></td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;">Package as an archive file. See <a href="../advanced/archive-file/">Package as an Archive File</a>.</td>
+<td style="text-align: left;"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-f</code>, <code>--filename</code></td>
+<td style="text-align: left;"><code>FILENAME</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Output filename without version and architecture. Must not contain white space or any other characters which are disallowed in file names.</td>
+<td style="text-align: left;">Basename of the Python script or PyInstaller spec file.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-a</code>, <code>--appname</code></td>
+<td style="text-align: left;"><code>APPNAME</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Application name.</td>
+<td style="text-align: left;">The value of <code>FILENAME</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--id</code></td>
+<td style="text-align: left;"><code>ID</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Application ID. Should follow reverse DNS format.</td>
+<td style="text-align: left;"><code>'id.not.found.'</code> + The value of <code>FILENAME</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--appv</code>, <code>--app-version</code></td>
+<td style="text-align: left;"><code>VERSION</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Application version.</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--author</code></td>
+<td style="text-align: left;"><code>AUTHOR</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Author.</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--publisher</code></td>
+<td style="text-align: left;"><code>PUBLISHER</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Publisher.</td>
+<td style="text-align: left;">The value of <code>AUTHOR</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-d</code>, <code>--description</code></td>
+<td style="text-align: left;"><code>DESCRIPTION</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Application description.</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--pyi-version</code></td>
+<td style="text-align: left;"><code>PYI_VERSION</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">PyInstaller version to be used.</td>
+<td style="text-align: left;">The latest version of PyInstaller</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-i</code>, <code>--icon</code></td>
+<td style="text-align: left;"><code>ICON</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to icon file.</td>
+<td style="text-align: left;">Path to the PyDeployment logo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-l</code>, <code>--license</code></td>
+<td style="text-align: left;"><code>LICENSE</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to license file.</td>
+<td style="text-align: left;">Path pointing to a single-line temporary text file with the content: <code>'Copyright (c) '</code> + the value of <code>AUTHOR</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-o</code>, <code>--outdir</code></td>
+<td style="text-align: left;"><code>OUTDIR</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to output directory.</td>
+<td style="text-align: left;"><code>'dist'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-r</code>, <code>--requirements</code></td>
+<td style="text-align: left;"><code>REQUIREMENTS</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to pip requirements file. The listed packages will be installed along with PyInstaller. This option is ignored if <code>VENV</code> is set.</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--venv</code></td>
+<td style="text-align: left;"><code>VENV</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to Python virtual environment. See <a href="../advanced/custom-venv/">Using a Custom Virtual Environment</a>.</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-build-options">Windows Build Options</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--nsis</code></td>
+<td style="text-align: left;"><code>NSIS</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to NSIS file. See <a href="../advanced/custom-nsis/">Using a Custom NSIS File</a>.</td>
+<td style="text-align: left;">Path to PyDeployment's default NSIS file <code>'build.nsi'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--makensis</code></td>
+<td style="text-align: left;"><code>MAKENSIS</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to makensis binary. See <a href="../advanced/custom-makensis/">Using a Custom Makensis Binary</a>.</td>
+<td style="text-align: left;">Path to PyDeployment's included makensis binary <code>makensis.exe</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="macos-build-options">macOS Build Options</h2>
+<p>See <a href="../advanced/macos-notarization/">macOS Notarization</a> to learn about these
+options and how they are used.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>-E</code>, <code>--enti</code>, <code>--entitlements</code></td>
+<td style="text-align: left;"><code>ENTI</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to entitlements file.</td>
+<td style="text-align: left;">Path to PyDeployment's default entitlements file <code>'entitlements.plist'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-C</code>, <code>--cert</code>, <code>--certificate</code></td>
+<td style="text-align: left;"><code>CERT</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Common Name of Certificate.</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-K</code>, <code>--keyc</code>, <code>--keychain-profile</code></td>
+<td style="text-align: left;"><code>KEYC</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Name of stored Keychain Profile.</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-A</code>, <code>--apid</code>, <code>--apple-id</code></td>
+<td style="text-align: left;"><code>APID</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Apple ID.</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-T</code>, <code>--tmid</code>, <code>--team-id</code></td>
+<td style="text-align: left;"><code>TMID</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Team ID.</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-P</code>, <code>--pass</code>, <code>--password</code></td>
+<td style="text-align: left;"><code>PASS</code></td>
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">App-specific Password.</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linux-build-options">Linux Build Options</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--appdata</code></td>
+<td style="text-align: left;"><code>APPDATA</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to AppStream metadata file. File name should be in the form: The value of <code>ID</code> + <code>'.appdata.xml'</code>.</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--appimagetool</code></td>
+<td style="text-align: left;"><code>APPIMAGETOOL</code></td>
+<td style="text-align: left;">path</td>
+<td style="text-align: left;">Path to appimagetool. See <a href="../advanced/custom-appimagetool/">Using a Custom Appimagetool Binary</a>.</td>
+<td style="text-align: left;">Path to PyDeployment's included appimagetool <code>'appimagetool-*.AppImage'</code>, whichever one matches the architecture of the system.</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+        <script src="../../js/version-select.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
