@@ -178,6 +178,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#notarization" class="nav-link">Notarization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#notarize-with-a-stored-keychain-profile" class="nav-link">Notarize With a Stored Keychain Profile</a>
               <ul class="nav flex-column">
               </ul>
@@ -221,7 +225,7 @@ specified Developer ID certificate.</p>
 </code></pre>
 <p>Note that this application will still need to be submitted for notarization
 separately.</p>
-<h2 id="notarize-with-a-stored-keychain-profile">Notarize With a Stored Keychain Profile</h2>
+<h2 id="notarization">Notarization</h2>
 <p>If you wish to both sign and notarize your application, you have two options
 for information to include.</p>
 <table>
@@ -238,24 +242,25 @@ for information to include.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="notarize-with-a-stored-keychain-profile">Notarize With a Stored Keychain Profile</h2>
 <p>You will want to create an App Store Connect API key and save it locally on
 your device. Then run the following command to store the Keychain Profile with
 the name of your choice.</p>
-<pre><code>xcrun notarytool store-credentials 'profile-name' -k &lt;key&gt; -d &lt;key-id&gt; -i &lt;issuer&gt;
+<pre><code>xcrun notarytool store-credentials 'profile-name' -k /path/to/api/key -d KEYIDHERE0 -i issuerid-g0es-0ver-h3r3-in0this0spot
 </code></pre>
-<p>The field <code>&lt;key&gt;</code> refers to the path to the App Store Connect API Key. Field
-<code>&lt;key-id&gt;</code> refers to the App Store Connect API Key ID, which is usually 10
-alphanumeric characters. The field <code>&lt;issuer&gt;</code> refers to the App Store Connect
-Issuer ID, which is in UUID format.</p>
+<p>The <code>-k</code> option refers to the path to the App Store Connect API Key. Option
+<code>-d</code> refers to the App Store Connect API Key ID, which is usually 10
+alphanumeric characters. The option <code>-i</code> refers to the App Store Connect Issuer
+ID, which is in UUID format.</p>
 <p>It is possible to store a Keychain Profile using the information in Option 2.
 Use the following command to do so.</p>
-<pre><code>xcrun notarytool store-credentials `keychain-profile-name` --apple-id &lt;apple-id&gt; --team-id &lt;team-id&gt; --password &lt;password&gt;
+<pre><code>xcrun notarytool store-credentials 'profile-name' --apple-id appleid@here.com --team-id TEAMIDHERE --password pass-word-goes-here
 </code></pre>
-<p>The field <code>&lt;apple-id&gt;</code> refers to your Apple ID, an email address. Field
-<code>&lt;team-id&gt;</code> refers to your Team ID, which is usually 10 uppercase alphanumeric
-characters. The field <code>&lt;password&gt;</code> refers to the an App-Specific Password,
+<p>The option <code>--apple-id</code> refers to your Apple ID, an email address. Option
+<code>--team-id</code> refers to your Team ID, which is usually 10 uppercase alphanumeric
+characters. The option <code>--password</code> refers to the an App-Specific Password,
 which has the format of 16 lowercase alphabetical characters separated into
-groups of 4 characters by hyphens, e.g. <code>pass-word-goes-here</code>.</p>
+groups of 4 characters by hyphens.</p>
 <p>With your Keychain Profile now stored, you may now use PyDeployment while
 specifying its name.</p>
 <pre><code>pydeploy myapp.spec -C 'Developer ID Application: Name Here (TEAMIDHERE)' -K 'profile-name'
@@ -265,7 +270,7 @@ Profile, as App-Specific Passwords tend to be more fickle.</p>
 <h2 id="notarize-without-a-stored-keychain-profile">Notarize Without a Stored Keychain Profile</h2>
 <p>If you do not wish to store your information in a Keychain Profile, you can
 feed the information from Option 2 directly to PyDeployment for notarization.</p>
-<pre><code>pydeploy myapp.spec -C 'Developer ID Application: Name Here (TEAMIDHERE)' -A &lt;apple-id&gt; -T &lt;team-id&gt; -P &lt;password&gt;
+<pre><code>pydeploy myapp.spec -C 'Developer ID Application: Name Here (TEAMIDHERE)' -A appleid@here.com -T TEAMIDHERE -P pass-word-goes-here
 </code></pre></div>
             </div>
         </div>
