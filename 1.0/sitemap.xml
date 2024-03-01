@@ -2,97 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/about/contributing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/about/license/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/about/release-notes/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/build-options/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/getting-started/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/advanced/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/advanced/archive-file/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/advanced/custom-appimagetool/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/advanced/custom-makensis/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/advanced/custom-nsis/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/advanced/custom-venv/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/advanced/macos-notarization/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/advanced/passing-args-to-pyi/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/setting-options/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/setting-options/command-line/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/setting-options/env-file/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pydeployment.github.io/pydeployment/1.0/user-guide/setting-options/using-both/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
