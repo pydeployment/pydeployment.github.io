@@ -1,0 +1,3 @@
+[submodule "pydeployment"]
+	path = pydeployment
+	url = git@github.com:pydeployment/pydeployment.git
