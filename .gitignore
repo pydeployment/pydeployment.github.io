@@ -1,3 +1,6 @@
+# Ignore pydeployment submodule
+/pydeployment/
+
 # Eclipse IDE project files
 .project
 .pydevproject
